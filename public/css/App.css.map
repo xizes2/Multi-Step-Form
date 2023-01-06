@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["../../src/sass/App.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA","file":"App.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "../../src/sass/App.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE;EACA;EACA;EACA",
+  "file": "App.css"
+}
