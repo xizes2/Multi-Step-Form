@@ -1,14 +1,14 @@
-DESCRIPTION:
+DESCRIPTION
 This project serves the purpose of practice coding applying some technologies that I haven't used before.
 
-BUNDLER:
+BUNDLER
 This project uses Vite as the build tool/bundler.
 
-FRAMEWORK:
+FRAMEWORK
 React with Typescript.
 
-MAIN LIBRARIES:
-Formik - A library to simplify form management.
-
-Styles:
-Sass - A CSS preprocessor that aims to simplify complex stylesheets.
+MAIN LIBRARIES
+Formik: A library to simplify form management.
+Sass: A CSS preprocessor that aims to simplify complex stylesheets.
+yup: Data (schema) validation.
+yup-password: password validation.
