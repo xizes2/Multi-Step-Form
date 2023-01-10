@@ -1,11 +1,11 @@
 import "./css/App.css";
-import Form from "./components/form/Form";
+import MainForm from "./components/form/MainForm";
 
 function App() {
   return (
     <div className="App">
       <h1>MultiStep Form</h1>
-      <Form />
+      <MainForm />
     </div>
   );
 }
