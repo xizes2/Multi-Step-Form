@@ -17,19 +17,23 @@ const FormInputText = ({
         <label htmlFor={props.id || props.name} className="">
           {label}
         </label>
-        <div className="pb-3">
+        <div className="min-h-[70px] pb-3">
           <input
             type={props.type}
             placeholder={props.placeholder}
             {...field}
             autoComplete="off"
-            className="peer min-w-[300px] rounded-md  border-none placeholder:text-slate-400 invalid:border-red-600  focus:bg-blue-100"
+            className={
+              meta.touched && meta.error
+                ? "min-w-[300px] rounded-md border-red-600 placeholder:text-slate-400 focus:border-red-600 focus:ring-1 focus:ring-red-600"
+                : "min-w-[300px] rounded-md border-gray-400 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1"
+            }
             required={required}
           />
           {meta.touched && meta.error ? (
-            <div className="relative left-3 bottom-12 w-fit text-xs peer-required:text-red-600">
+            <span className="relative left-2 bottom-12 block w-fit bg-white px-2 text-xs  text-red-600">
               {meta.error}
-            </div>
+            </span>
           ) : null}
         </div>
       </div>
