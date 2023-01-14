@@ -31,7 +31,7 @@ const FormInputText = ({
             required={required}
           />
           {meta.touched && meta.error ? (
-            <span className="relative left-2 bottom-12 block w-fit bg-white px-2 text-xs  text-red-600">
+            <span className="relative -top-[50px] left-2 block w-fit bg-white px-[5px] text-xs  text-red-600">
               {meta.error}
             </span>
           ) : null}

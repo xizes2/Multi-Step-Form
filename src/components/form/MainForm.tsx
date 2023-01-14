@@ -38,7 +38,7 @@ const MainForm = (): JSX.Element => {
           alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form className="grid justify-center rounded-md bg-white p-8">
+        <Form className="grid max-w-2xl justify-center rounded-md bg-white p-8 shadow-md shadow-slate-400 ">
           <FormInputText
             label="Name"
             name="name"
@@ -82,7 +82,12 @@ const MainForm = (): JSX.Element => {
             required={true}
           />
 
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            className="mt-3 w-fit justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black"
+          >
+            Submit
+          </button>
         </Form>
       </Formik>
     </>
