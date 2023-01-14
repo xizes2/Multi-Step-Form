@@ -38,7 +38,7 @@ const MainForm = (): JSX.Element => {
           alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form className="grid justify-center">
+        <Form className="grid justify-center rounded-md bg-white p-8">
           <FormInputText
             label="Name"
             name="name"
