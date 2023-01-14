@@ -9,6 +9,6 @@ React with Typescript.
 
 MAIN LIBRARIES
 Formik: A library to simplify form management.
-Sass: A CSS preprocessor that aims to simplify complex stylesheets.
-yup: Data (schema) validation.
-yup-password: password validation.
+Yup: Data (schema) validation.
+Yup-password: Password validation.
+Tailwindcss: A CSS framework that simplifies the styling of your application based on class naming.
