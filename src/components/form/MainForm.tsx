@@ -2,6 +2,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import FormInputText from "../formInput/FormInputText";
+
 YupPassword(Yup);
 
 const MainForm = (): JSX.Element => {
@@ -18,61 +19,67 @@ const MainForm = (): JSX.Element => {
           address: "",
         }}
         validationSchema={Yup.object({
-          name: Yup.string().max(15, "Max 15 characters.").required("Required"),
+          name: Yup.string().max(15, "Max 15 characters").required("Required"),
           surname: Yup.string()
-            .max(15, "Max 15 characters.")
+            .max(15, "Max 15 characters")
             .required("Required"),
           email: Yup.string()
             .email("Invalid email address")
             .required("Required"),
           password: Yup.string().password().required("Required"),
           country: Yup.string()
-            .max(15, "Max 15 characters.")
+            .max(15, "Max 15 characters")
             .required("Required"),
           address: Yup.string()
-            .max(30, "Max 30 characters.")
+            .max(30, "Max 30 characters")
             .required("Required"),
         })}
         onSubmit={(values) => {
           alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form>
+        <Form className="grid justify-center">
           <FormInputText
-            label="name"
+            label="Name"
             name="name"
             type="text"
             placeholder="Enter your first name"
+            required={true}
           />
           <FormInputText
-            label="surname"
+            label="Surname"
             name="surname"
             type="text"
             placeholder="Enter your last surname"
+            required={true}
           />
           <FormInputText
-            label="email"
+            label="Email"
             name="email"
             type="email"
             placeholder="Enter your email"
+            required={true}
           />
           <FormInputText
-            label="password"
+            label="Password"
             name="password"
             type="password"
             placeholder="Enter your password"
+            required={true}
           />
           <FormInputText
-            label="country"
+            label="Country"
             name="country"
             type="text"
             placeholder="Enter your country"
+            required={true}
           />
           <FormInputText
-            label="address"
+            label="Address"
             name="address"
             type="text"
             placeholder="Enter your address"
+            required={true}
           />
 
           <button type="submit">Submit</button>
