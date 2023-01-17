@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
-import FormInputText from "../formInput/FormInputText";
+import FormInput from "../formInput/FormInput";
 
 YupPassword(Yup);
 
@@ -39,42 +39,42 @@ const MainForm = (): JSX.Element => {
         }}
       >
         <Form className="grid max-w-2xl justify-center rounded-md bg-white p-8 shadow-md shadow-slate-400 ">
-          <FormInputText
+          <FormInput
             label="Name"
             name="name"
             type="text"
             placeholder="Enter your first name"
             required={true}
           />
-          <FormInputText
+          <FormInput
             label="Surname"
             name="surname"
             type="text"
             placeholder="Enter your last surname"
             required={true}
           />
-          <FormInputText
+          <FormInput
             label="Email"
             name="email"
             type="email"
             placeholder="Enter your email"
             required={true}
           />
-          <FormInputText
+          <FormInput
             label="Password"
             name="password"
             type="password"
             placeholder="Enter your password"
             required={true}
           />
-          <FormInputText
+          <FormInput
             label="Country"
             name="country"
             type="text"
             placeholder="Enter your country"
             required={true}
           />
-          <FormInputText
+          <FormInput
             label="Address"
             name="address"
             type="text"
