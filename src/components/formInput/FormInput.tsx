@@ -39,16 +39,6 @@ const FormInput = ({
       </div>
     </>
   );
-  // return (
-  //   <>
-  //     <div className="flex justify-between gap-3 text-center">
-  //       <label htmlFor="test">{label}</label>
-  //       <div className="min-h-[70px] pb-3">
-  //         <input />
-  //       </div>
-  //     </div>
-  //   </>
-  // );
 };
 
 export default FormInput;
