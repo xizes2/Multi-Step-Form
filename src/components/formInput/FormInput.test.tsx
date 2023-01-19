@@ -12,7 +12,7 @@ beforeEach(() => {
   render(
     <FormikWrapper>
       <FormInput
-        label="name"
+        label="Name"
         name="name"
         type="text"
         placeholder="Enter your name"
@@ -29,7 +29,7 @@ describe("Given a FormInput component", () => {
   it("should render a label and it corresponding input.", async () => {
     const inputText = "John Doe";
 
-    const labelInput = await screen.findByLabelText("name");
+    const labelInput = await screen.findByLabelText("Name");
 
     await user.type(labelInput, inputText);
 
@@ -38,7 +38,7 @@ describe("Given a FormInput component", () => {
   });
 
   it("should show an error if user doesn't input anything and pass to the next field", async () => {
-    const labelInput = await screen.findByLabelText("name");
+    const labelInput = await screen.findByLabelText("Name");
     const errorMessage = "Required";
 
     await user.click(labelInput);
