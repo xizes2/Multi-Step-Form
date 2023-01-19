@@ -42,6 +42,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Name"
             name="name"
+            id="name"
             type="text"
             placeholder="Enter your first name"
             required={true}
@@ -49,6 +50,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Surname"
             name="surname"
+            id="surname"
             type="text"
             placeholder="Enter your last surname"
             required={true}
@@ -56,6 +58,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Email"
             name="email"
+            id="email"
             type="email"
             placeholder="Enter your email"
             required={true}
@@ -63,6 +66,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Password"
             name="password"
+            id="password"
             type="password"
             placeholder="Enter your password"
             required={true}
@@ -70,6 +74,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Country"
             name="country"
+            id="country"
             type="text"
             placeholder="Enter your country"
             required={true}
@@ -77,6 +82,7 @@ const MainForm = (): JSX.Element => {
           <FormInput
             label="Address"
             name="address"
+            id="address"
             type="text"
             placeholder="Enter your address"
             required={true}

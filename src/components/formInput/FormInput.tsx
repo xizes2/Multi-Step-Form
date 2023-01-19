@@ -14,11 +14,10 @@ const FormInput = ({
   return (
     <>
       <div className="flex justify-between gap-3 text-center">
-        <label htmlFor={props.id || props.name} className="">
-          {label}
-        </label>
+        <label htmlFor={props.id || props.name}>{label}</label>
         <div className="min-h-[70px] pb-3">
           <input
+            id={props.id}
             type={props.type}
             placeholder={props.placeholder}
             {...field}
@@ -31,7 +30,10 @@ const FormInput = ({
             required={required}
           />
           {meta.touched && meta.error ? (
-            <span className="relative -top-[50px] left-2 block w-fit bg-white px-[5px] text-xs  text-red-600">
+            <span
+              id="field-error"
+              className="relative -top-[50px] left-2 block w-fit bg-white px-[5px] text-xs  text-red-600"
+            >
               {meta.error}
             </span>
           ) : null}
