@@ -15,11 +15,10 @@ const FormInput = ({
   return (
     <>
       <div className="flex justify-between gap-3 text-center">
-        <label htmlFor={props.id || props.name} className="">
-          {label}
-        </label>
+        <label htmlFor={props.id || props.name}>{label}</label>
         <div className="min-h-[70px] pb-3">
           <input
+            id={props.id}
             type={props.type}
             placeholder={props.placeholder}
             {...field}
