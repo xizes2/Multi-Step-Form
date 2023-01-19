@@ -5,4 +5,10 @@ module.exports = {
     "^.+\\.tsx?$": "babel-jest",
   },
   testEnvironment: "jsdom",
+  collectCoverageFrom: [
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "!src/utils/*",
+    "!src/**/*.d.ts",
+  ],
 };
