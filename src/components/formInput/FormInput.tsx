@@ -7,6 +7,7 @@ interface IInputProps {
 const FormInput = ({
   required,
   label,
+  disabled = false,
   ...props
 }: IInputProps & FieldHookConfig<string>): JSX.Element => {
   const [field, meta] = useField(props);
@@ -28,8 +29,9 @@ const FormInput = ({
                 : "min-w-[300px] rounded-md border-gray-400 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1"
             }
             required={required}
+            disabled={disabled}
           />
-          {meta.touched && meta.error ? (
+          {meta.touched && meta.error && !disabled ? (
             <span
               id="field-error"
               className="relative -top-[50px] left-2 block w-fit bg-white px-[5px] text-xs  text-red-600"
