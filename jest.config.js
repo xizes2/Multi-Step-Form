@@ -10,5 +10,6 @@ module.exports = {
     "src/**/*.ts",
     "!src/utils/*",
     "!src/**/*.d.ts",
+    "!src/main.tsx",
   ],
 };
