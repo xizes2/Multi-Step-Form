@@ -1,4 +1,3 @@
-import "./App.css";
 import MainForm from "./components/form/MainForm";
 
 function App() {
