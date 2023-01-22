@@ -6,7 +6,7 @@ const useMultistepForm = (steps: ReactElement[]) => {
   const previousStep = () => {
     setCurrentStepIndex((index) => {
       if (index <= 0) return index;
-      return index + 1;
+      return index - 1;
     });
   };
 

@@ -3,28 +3,22 @@ import FormInput from "../formInput/FormInput";
 const PersonalDataForm = () => {
   return (
     <>
+      <h2 className="pb-8 text-3xl">Personal Information</h2>
       <FormInput
-        label="Email"
-        name="email"
-        id="email"
-        type="email"
-        placeholder="Enter your email"
-        required={true}
-      />
-      <FormInput
-        label="Username"
-        name="email"
-        id="username"
+        label="Name"
+        name="name"
+        id="name"
         type="text"
-        placeholder="Your email"
-        disabled={true}
+        placeholder="Enter your first name"
+        required={true}
+        autoFocus
       />
       <FormInput
-        label="Password"
-        name="password"
-        id="password"
-        type="password"
-        placeholder="Enter your password"
+        label="Surname"
+        name="surname"
+        id="surname"
+        type="text"
+        placeholder="Enter your last surname"
         required={true}
       />
     </>
