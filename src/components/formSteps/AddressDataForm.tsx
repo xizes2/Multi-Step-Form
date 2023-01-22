@@ -3,6 +3,7 @@ import FormInput from "../formInput/FormInput";
 const AddressDataForm = () => {
   return (
     <>
+      <h2 className="pb-8 text-3xl">Addrress Information</h2>
       <FormInput
         label="Country"
         name="country"
