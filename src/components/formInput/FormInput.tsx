@@ -7,6 +7,7 @@ interface IInputProps {
 const FormInput = ({
   required,
   label,
+  autoFocus,
   disabled = false,
   ...props
 }: IInputProps & FieldHookConfig<string>): JSX.Element => {
@@ -30,6 +31,7 @@ const FormInput = ({
             }
             required={required}
             disabled={disabled}
+            autoFocus={autoFocus}
           />
           {meta.touched && meta.error && !disabled ? (
             <span
