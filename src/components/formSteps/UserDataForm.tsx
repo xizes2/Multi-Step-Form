@@ -11,6 +11,7 @@ const UserDataForm = () => {
         type="email"
         placeholder="Enter your email"
         required={true}
+        autoFocus
       />
       <FormInput
         label="Username"
