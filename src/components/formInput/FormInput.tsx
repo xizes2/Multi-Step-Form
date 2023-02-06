@@ -1,6 +1,6 @@
 import { useField, FieldHookConfig } from "formik";
 
-interface IInputProps {
+interface IFormInputProps {
   label: string;
 }
 
@@ -10,7 +10,7 @@ const FormInput = ({
   autoFocus,
   disabled = false,
   ...props
-}: IInputProps & FieldHookConfig<string>): JSX.Element => {
+}: IFormInputProps & FieldHookConfig<string>): JSX.Element => {
   const [field, meta] = useField(props);
 
   return (
@@ -26,18 +26,15 @@ const FormInput = ({
             autoComplete="off"
             className={
               meta.touched && meta.error
-                ? "min-w-[300px] rounded-md border-red-600 placeholder:text-slate-400 focus:border-red-600 focus:ring-1 focus:ring-red-600"
-                : "min-w-[300px] rounded-md border-gray-400 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1"
+                ? "min-w-[300px] rounded-md border-red-600 placeholder:text-slate-400 focus:border-red-600 focus:ring-1 focus:ring-red-600 disabled:bg-gray-300"
+                : "min-w-[300px] rounded-md border-gray-400 placeholder:text-slate-400 focus:border-blue-600 focus:ring-1 disabled:bg-gray-300"
             }
             required={required}
             disabled={disabled}
             autoFocus={autoFocus}
           />
           {meta.touched && meta.error && !disabled ? (
-            <span
-              id="field-error"
-              className="relative -top-[50px] left-2 block w-fit bg-white px-[5px] text-xs  text-red-600"
-            >
+            <span className="field-error relative -top-[50px] left-2 block w-fit bg-white px-[5px]  text-xs text-red-600">
               {meta.error}
             </span>
           ) : null}
