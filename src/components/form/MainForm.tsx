@@ -1,62 +1,64 @@
-import { Form } from "formik";
-import { FormEvent } from "react";
-import * as Yup from "yup";
-import YupPassword from "yup-password";
-import useMultistepForm from "../../hooks/useMultistepForm";
-import FormikWrapper from "../../utils/FormikWrapper";
+import FormWrapper from "../formWrapper/FormWrapper";
 import AddressDataForm from "../formSteps/AddressDataForm";
 import PersonalDataForm from "../formSteps/PersonalDataForm";
 import UserDataForm from "../formSteps/UserDataForm";
+import * as Yup from "yup";
+import YupPassword from "yup-password";
+import { IInitialValues } from "../../hooks/useMultistepForm";
+import { FormikHelpers } from "formik";
 
 YupPassword(Yup);
 
+interface IFormStepProps {
+  children: JSX.Element;
+  validationSchema: Yup.AnyObjectSchema;
+  onSubmit: (
+    values: IInitialValues,
+    bag: FormikHelpers<IInitialValues>
+  ) => Promise<void>;
+}
+
+const FormStep = ({ children }: IFormStepProps) => children;
+
 const MainForm = (): JSX.Element => {
-  const {
-    steps,
-    step,
-    currentStepIndex,
-    isFirstStep,
-    isLastStep,
-    previousStep,
-    nextStep,
-  } = useMultistepForm([
-    <PersonalDataForm key={"personalData"} />,
-    <UserDataForm key={"userData"} />,
-    <AddressDataForm key={"addressData"} />,
-  ]);
-
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    nextStep();
-  };
-
   return (
-    <FormikWrapper>
-      <Form
-        onSubmit={onSubmit}
-        className="grid max-w-2xl justify-center rounded-md bg-white p-8 shadow-md shadow-slate-400 "
+    <FormWrapper onSubmit={async (values) => console.log("Final", values)}>
+      <FormStep
+        onSubmit={async (values) => console.log("Step 1", values)}
+        validationSchema={Yup.object({
+          name: Yup.string().max(15, "Max 15 characters").required("Required"),
+          surname: Yup.string()
+            .max(15, "Max 15 characters")
+            .required("Required"),
+        })}
       >
-        {step}
-
-        <div className="flex justify-evenly gap-1">
-          {!isFirstStep && (
-            <button
-              type="button"
-              className="t-3 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black"
-              onClick={previousStep}
-            >
-              Previous
-            </button>
-          )}
-          <button
-            className="t-3 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black"
-            type="submit"
-          >
-            {isLastStep ? "Submit" : "Next"}
-          </button>
-        </div>
-      </Form>
-    </FormikWrapper>
+        <PersonalDataForm />
+      </FormStep>
+      <FormStep
+        onSubmit={async (values) => console.log("Step 2", values)}
+        validationSchema={Yup.object({
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Required"),
+          password: Yup.string().password().required("Required"),
+        })}
+      >
+        <UserDataForm />
+      </FormStep>
+      <FormStep
+        onSubmit={async (values) => console.log("Step 3", values)}
+        validationSchema={Yup.object({
+          country: Yup.string()
+            .max(15, "Max 15 characters")
+            .required("Required"),
+          address: Yup.string()
+            .max(30, "Max 30 characters")
+            .required("Required"),
+        })}
+      >
+        <AddressDataForm />
+      </FormStep>
+    </FormWrapper>
   );
 };
 
