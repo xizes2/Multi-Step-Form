@@ -7,9 +7,12 @@ const FormStepper = ({ steps, currentStepIndex }: IFormStepperProps) => {
   const formSteps = ["Personal Data", "User Data", "Address Data"];
 
   return (
-    <li className="flex list-none justify-around pb-5 [&>div:last-child>span]:hidden">
-      {steps.map((_step, index) => (
-        <div key={index} className="relative flex w-32 flex-col items-center ">
+    <li className="flex list-none justify-around pb-5 [&>div:last-child>span:first-child]:hidden">
+      {steps.map((step, index) => (
+        <div
+          key={step.key}
+          className="relative flex w-32 flex-col items-center "
+        >
           <ul
             className={`${
               currentStepIndex >= index && "bg-blue-600 text-white"
