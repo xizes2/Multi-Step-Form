@@ -3,7 +3,6 @@ import FormInput from "../formInput/FormInput";
 const PersonalDataForm = () => {
   return (
     <>
-      <h2 className="pb-8 text-3xl">Personal Information</h2>
       <FormInput
         label="Name"
         name="name"
