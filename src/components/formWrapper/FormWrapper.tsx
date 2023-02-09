@@ -1,5 +1,6 @@
 import { Form, Formik, FormikHelpers } from "formik";
 import useMultistepForm, { IInitialValues } from "../../hooks/useMultistepForm";
+import FormStepper from "../formStepper/FormStepper";
 import AddressDataForm from "../formSteps/AddressDataForm";
 import PersonalDataForm from "../formSteps/PersonalDataForm";
 import UserDataForm from "../formSteps/UserDataForm";
@@ -51,6 +52,7 @@ const FormWrapper = ({ children, onSubmit }: IFormWrapperProps) => {
     >
       {({ values, isValid, setErrors }) => (
         <Form className="grid max-w-2xl justify-center rounded-md border  bg-white p-8 shadow-md  shadow-slate-600">
+          <FormStepper currentStepIndex={currentStepIndex} steps={children} />
           {step}
           <div className="flex justify-evenly gap-1">
             {!isFirstStep && (
