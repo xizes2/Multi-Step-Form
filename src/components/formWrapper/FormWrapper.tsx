@@ -53,11 +53,11 @@ const FormWrapper = ({ children, onSubmit }: IFormWrapperProps) => {
       {({ values, isValid, setErrors }) => (
         <Form className="grid max-w-2xl justify-center rounded-md border  bg-white p-8 shadow-md  shadow-slate-600">
           <FormStepper currentStepIndex={currentStepIndex} steps={children} />
-          {step}
+          {<div className="flex h-56 w-96 flex-col justify-evenly">{step}</div>}
           <div className="flex justify-evenly gap-1">
             {!isFirstStep && (
               <button
-                className="t-3 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black"
+                className="t-3 h-12 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black"
                 onClick={() => [previousStep(values), setErrors({})]}
                 type="button"
               >
@@ -65,7 +65,7 @@ const FormWrapper = ({ children, onSubmit }: IFormWrapperProps) => {
               </button>
             )}
             <button
-              className="t-3 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black disabled:bg-blue-300"
+              className="t-3 h-12 w-fit min-w-[119px] justify-center justify-self-center rounded-md bg-blue-600 px-7 py-2 text-white shadow-sm shadow-black disabled:bg-blue-300"
               type="submit"
               disabled={!isValid}
             >
