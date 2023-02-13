@@ -68,7 +68,7 @@ describe("Given a MainForm component", () => {
     await user.click(screen.getByText("Submit"));
   });
 
-  it("when not on second step and button 'previous' is pressed, it should return to previous page.", async () => {
+  it("should return to previous page when not on first step and button 'previous' is pressed.", async () => {
     const inputsStep1 = [
       await screen.findByLabelText("Name"),
       await screen.findByLabelText("Surname"),
@@ -96,7 +96,7 @@ describe("Given a MainForm component", () => {
     inputsStep1Previous.forEach((input) => expect(input).toBeInTheDocument());
   });
 
-  it("when no input is typed an error should appear on screen.", async () => {
+  it("should show an error when no input is typed and the user clicks on the next button.", async () => {
     user.click(screen.getByText("Next"));
 
     await waitFor(() => {
