@@ -1,10 +1,11 @@
 import MainForm from "./components/form/MainForm";
+import Header from "./components/header/Header";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="p-10">MultiStep Form</h1>
-      <main className="m-auto flex max-w-2xl justify-center">
+    <div className="App min-h-[100vh]">
+      <Header />
+      <main className="m-5 flex justify-center">
         <MainForm />
       </main>
     </div>

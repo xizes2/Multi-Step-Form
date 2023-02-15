@@ -13,7 +13,7 @@ const FormStepper = ({ steps, currentStepIndex }: IFormStepperProps) => {
           <li
             key={index}
             className={`${
-              currentStepIndex >= index && "bg-blue-600 text-white"
+              currentStepIndex >= index && "bg-blue-800 text-white"
             }   w-fit rounded-3xl border border-gray-400 bg-white px-4 py-2 text-lg transition-all delay-100 duration-500`}
           >
             {index + 1}
@@ -28,8 +28,8 @@ const FormStepper = ({ steps, currentStepIndex }: IFormStepperProps) => {
           <span
             className={
               currentStepIndex > index
-                ? "absolute left-[85px] top-5 h-2 w-full bg-blue-600 transition-width duration-500"
-                : "absolute left-[85px] top-5 h-2 w-0 bg-blue-600 transition-width duration-500"
+                ? "absolute left-[85px] top-5 h-2 w-full bg-blue-800 transition-width duration-500"
+                : "absolute left-[85px] top-5 h-2 w-0 bg-blue-800 transition-width duration-500"
             }
           ></span>
           <span className="absolute left-[85px] top-5 h-2 w-full border border-gray-400"></span>

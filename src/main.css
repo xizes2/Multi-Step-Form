@@ -6,15 +6,15 @@ html {
   width: fit-content;
   height: 100vh;
   margin: 0 auto;
-  background-image: url("./assets/4931029.jpg");
+  background-image: url("./assets/1077.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 body {
   place-items: center;
   min-height: 100%;
-  padding: 2rem;
   text-align: center;
   box-sizing: border-box;
 }
