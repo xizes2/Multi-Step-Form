@@ -16,7 +16,7 @@ const FormInput = ({
   return (
     <>
       <div className="flex justify-between gap-3 text-center">
-        <label htmlFor={props.id || props.name}>{label}</label>
+        <label htmlFor={props.id}>{label}</label>
         <div className="min-h-[70px] pb-3">
           <input
             id={props.id}
